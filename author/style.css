@@ -1,0 +1,988 @@
+/* general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+
+:root {
+
+    --main: rgb(116, 65, 144);
+    --mainHover: rgb(122, 67, 152);
+    --mainHover2: rgb(147, 84, 181);
+    --mainAccent: rgb(206, 174, 223);
+    --offmainAccent: rgb(231, 206, 244);
+    --textOnMain: rgb(231, 204, 237);
+    --textOnMainHover: white;
+    --body: rgb(252, 252, 252);
+    --book: rgb(237, 229, 241);
+    --body2: rgb(245, 240, 248);
+    --footer: rgb(253, 242, 255);
+}
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--body);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+main {
+    padding-bottom: 100px;
+}
+
+.page-container-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.page-container {
+    max-width: 1500px;
+    width: 100%;
+}
+
+
+/* nav code */
+/* mobile navbar */
+.topnav {
+    display: none;
+    background-color: var(--main);
+    overflow: hidden;
+
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: var(--textOnMain);
+    text-align: center;
+    padding: 30px 40px 30px 40px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* dekstop/tablet navbar */
+nav {
+    width: 100vw;
+    max-width: 100%;
+    height: 80px;
+    background-color: var(--main);
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 90%;
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+nav li {
+    justify-self: center;
+    width: fit-content;
+    display: inline;
+    transition: transform 0.2s;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--textOnMain);
+    font-weight: bold;
+}
+
+nav li:hover {
+    transform: scale(1.2);
+
+}
+
+nav a:hover {
+    transition: 0.2s;
+    color: var(--textOnMainHover);
+}
+
+nav li:active {
+    transform: scale(0.8);
+}
+
+/* banner code */
+.banner {
+    display: grid;
+    width: 100vw;
+    max-width: 100%;
+    min-height: 30vh;
+    height: auto;
+    background-image: url("MPart/bannerExtended.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+}
+
+.banner-gradient {
+    position: absolute;
+    max-width: 100%;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(180deg, var(--main) 0%, rgba(133, 78, 163, 0.18813462885154064) 100%);
+    z-index: 1;
+}
+
+.book-promo {
+
+    display: grid;
+    padding: 30px;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: 25vh;
+    height: fit-content;
+    align-self: center;
+    justify-self: center;
+    width: fit-content;
+    margin: auto;
+    z-index: 2;
+}
+
+.book-promo img {
+    justify-self: center;
+    align-self: center;
+    width: 40vw;
+    max-width: 300px;
+    object-fit: contain;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.book-promo h1 {
+    grid-column: 2;
+    justify-self: center;
+    align-self: end;
+    color: var(--body);
+    text-align: center;
+    font-size: calc(18px + 0.5vw);
+}
+
+.book-promo button {
+    grid-column: 2;
+    align-self: start;
+    border-radius: 10px;
+    font-size: calc(18px + 0.2vw);
+    border: none;
+    color: var(--main);
+    background-color: var(--body);
+    transition: 0.3s;
+    padding: 20px;
+
+}
+
+.book-promo a {
+    justify-self: center;
+}
+
+.book-promo button:hover {
+    color: var(--mainHover);
+    background-color: var(--textOnMainHover);
+    transition: 0.3s;
+    transform: scale(1.03);
+}
+
+/* applies the top half of the paper rip effect */
+.top-banner-rip {
+    margin-top: 43px;
+    height: 20px;
+    border-top: 7px solid transparent;
+    border-image: url(MPart/rip-border.png) 30 round;
+}
+
+/* applies the bottom half of the paper rip effect */
+.bottom-banner-rip {
+    height: 20px;
+    border-top: 7px solid transparent;
+    border-image: url(MPart/rip-under.png) 30 round;
+    z-index: 1;
+}
+
+
+
+
+
+/* footer code */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    background-color: var(--main);
+    /* background: linear-gradient(to bottom, var(--body), var(--footer)); */
+    padding: 20px;
+    height: 150px;
+    width: 100vw;
+    max-width: 100%;
+
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    width: 30vw;
+    max-width: 200px;
+    gap: 10px;
+}
+
+
+footer h3 {
+
+    font-size: 1rem;
+    color: var(--textOnMain);
+    margin: 5px 0;
+    grid-column: span 3;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+footer svg {
+
+    fill: var(--textOnMain);
+    height: 30px;
+    margin: 5px;
+    transition: 0.3s;
+    align-self: center;
+    justify-self: center;
+}
+
+footer svg:hover {
+    transform: scale(1.1);
+    fill: var(--textOnMainHover);
+}
+
+
+/* index header */
+.header {
+    color: var(--main);
+    align-self: start;
+    margin-left: 5%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+
+}
+
+/* index cards code */
+.wrapper-container {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.wrapper {
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 20px var(--offmainAccent);
+    border-radius: 15px;
+    width: 90%;
+    position: relative;
+}
+
+.wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    line-height: 67px;
+    position: absolute;
+    text-align: center;
+    background: var(--mainHover2);
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+
+.wrapper i svg {
+    height: 30px;
+    fill: var(--textOnMain);
+}
+
+.wrapper i:active {
+    transform: translateY(-50%) scale(0.85);
+}
+
+.wrapper i:first-child {
+    left: -30px;
+}
+
+.wrapper i:last-child {
+    right: -30px;
+}
+
+.wrapper .carousel {
+    gap: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((90% / 3));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    border-radius: 15px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel .card {
+    min-width: 250px;
+    max-width: 500px;
+    background: linear-gradient(180deg, rgb(163, 105, 194) 0%, rgb(127, 80, 177) 100%);
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.carousel .card .img {
+    height: 148px;
+    width: 148px;
+    border-radius: 50%;
+}
+
+.card .img img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.carousel .card h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 30px 0 5px;
+    text-align: center;
+}
+
+.carousel .card span {
+    color: var(--textOnMain);
+    font-size: 1rem;
+    text-align: center;
+    margin: 15px;
+}
+
+
+
+/* activity section index page */
+
+.activity-wrapper {
+    border-radius: 15px;
+    width: 90%;
+    position: relative;
+}
+
+
+.activities-container {
+    display: grid;
+
+    margin-top: 50px;
+    border-radius: 15px;
+
+    height: fit-content;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.activities-container h2 {
+    grid-column: span 2;
+    color: var(--main);
+}
+
+/* activities text and expand/collapse button */
+.activities-container p {
+    font-size: 1.2rem;
+    color: var(--main);
+    grid-column: span 2;
+    text-align: start;
+}
+
+.expand-btn {
+    display: none;
+    transition: 0.3s;
+}
+
+.activities-container p:has(+ .expand-btn:checked) {
+    max-height: none;
+}
+
+
+.activity-image {
+    padding-bottom: 50%;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+
+
+/* books page code */
+.book-wrapper-container {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+.book-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-size: cover;
+    border-radius: 15px;
+    width: 90%;
+
+}
+
+.book-gradient {
+    background: linear-gradient(90deg, rgba(236, 229, 241, 0.6) 0%, var(--body2) 65%, var(--body2)100%);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+
+}
+
+.book-grid {
+
+    padding: 30px;
+    border-radius: 15px;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    /* box-shadow: 0px 0px 20px var(--body2); */
+}
+
+.book-grid h2,
+p {
+    font-size: calc(16px + 0.5vw);
+    color: var(--main);
+    text-align: center;
+}
+
+.book-grid p {
+    font-size: calc(14px + 0.5vw);
+}
+
+.book-grid img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    grid-row: span 2;
+    justify-self: center;
+    align-self: center;
+    box-shadow: 5px 5px 5px rgb(122, 85, 129);
+}
+
+.book-grid button {
+    padding: 20px;
+    max-height: 200px;
+    max-width: 400px;
+    width: 20vw;
+    background-color: var(--main);
+    border-radius: 15px;
+    border: none;
+    font-size: calc(16px + 0.5vw);
+    color: var(--body2);
+    transition: transform 0.3s ease;
+    transition: 0.3s;
+}
+
+.book-grid a {
+    justify-self: center;
+    align-self: center;
+}
+
+.book-grid button:hover {
+    transform: scale(1.05);
+    background-color: var(--mainHover);
+    color: white;
+    transition: 0.3s;
+}
+
+.book-text-container {
+    justify-self: center;
+    align-self: center;
+}
+
+
+/* about page code */
+
+.about-wrapper {
+    margin-top: 50px;
+    width: 60vw;
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-wrapper p {
+    font-size: calc(14px + 0.2vw);
+    text-align: start;
+}
+
+
+.contact-grid {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-grid h2 {
+    color: var(--mainHover);
+    align-self: center;
+}
+
+.contact-svg {
+    justify-self: end;
+}
+
+.contact-grid svg {
+    fill: var(--mainHover);
+    height: 40px;
+    margin: 1vw;
+    transition: 0.3s;
+}
+
+.contact-grid svg:hover {
+    transform: scale(1.1);
+    fill: var(--mainHover2);
+}
+
+.contact-wrapper {
+    background-color: var(--offmainAccent);
+    border: 5px dashed var(--mainAccent);
+    width: 100%;
+    border-radius: 15px;
+    padding: 30px;
+
+}
+
+.about-wrapper p:has(+ .expand-btn:checked) {
+    max-height: none;
+}
+
+.book-page-wrapper {
+    max-width: 1200px;
+    justify-self: center;
+    display: grid;
+    width: 70vw;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 0px 20px var(--offmainAccent);
+}
+
+.book-page-wrapper img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    justify-self: center;
+    grid-row: span 2;
+    box-shadow: 5px 5px 5px rgb(122, 85, 129);
+}
+
+.book-page-wrapper p {
+    text-align: left;
+    font-size: calc(14px + 0.2vw);
+    color: var(--mainHover);
+    justify-content: center;
+}
+
+.book-page-wrapper h2 {
+    justify-content: center;
+    text-align: left;
+    font-size: calc(16px + 0.2vw);
+    color: var(--main);
+    padding-bottom: 20px;
+}
+
+.book-page-wrapper button {
+    padding: 20px;
+    max-height: 200px;
+    background-color: var(--main);
+    border-radius: 15px;
+    border: none;
+    font-size: calc(16px + 0.5vw);
+    color: var(--textOnMain);
+    transition: transform 0.3s ease;
+    transition: 0.3s;
+    fill: var(--textOnMain);
+}
+
+.book-page-wrapper button svg {
+    height: calc(16px + 0.5vw);
+    align-self: center;
+    vertical-align: -0.125em;
+}
+
+.button-price-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    gap: 20px;
+}
+
+.book-page-wrapper a {
+    justify-self: center;
+    align-self: center;
+}
+
+.book-page-wrapper button:hover {
+    transform: scale(1.05);
+    background-color: var(--mainHover);
+    color: var(--textOnMainHover);
+    transition: 0.3s;
+    fill: var(--textOnMainHover);
+}
+
+.price {
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    font-size: calc(16px + 0.5vw);
+    color: var(--main);
+    justify-self: center;
+    align-self: center;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .activities-container p {
+        font-size: 1.2rem;
+        color: var(--main);
+        text-align: start;
+
+        --max-lines: 3;
+        --line-height: 1.4;
+
+        max-height: calc(var(--max-lines) * 1em * var(--line-height));
+        line-height: var(--line-height);
+
+        overflow: hidden;
+        position: relative;
+    }
+
+    .expand-btn {
+        display: block;
+        appearance: none;
+        color: var(--textOnMain);
+        text-align: center;
+        justify-content: center;
+        background-color: var(--main);
+        padding: .5em;
+        border-radius: 10px;
+        cursor: pointer;
+        width: fit-content;
+        font-size: 1.2rem;
+        justify-self: center;
+        transition: 0.3s;
+    }
+
+    .expand-btn:hover {
+        transform: scale(1.05);
+        background-color: var(--mainHover);
+        transition: 0.3s;
+
+    }
+
+    .expand-btn::before {
+        content: "Δες περισσότερα";
+    }
+
+    .expand-btn:checked::before {
+        content: "Δες λιγότερα"
+    }
+
+    .activities-container p:has(+ .expand-btn:not(:checked))::before {
+        content: "";
+        position: absolute;
+        height: calc(1em * var(--line-height));
+        width: 100%;
+        bottom: 0;
+        pointer-events: none;
+        background: linear-gradient(to bottom, transparent, var(--body));
+
+    }
+
+
+    .book-promo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .book-promo img,
+    .book-promo h1,
+    .book-promo button {
+        justify-self: center;
+        grid-row: auto;
+        grid-column: auto;
+        align-self: center;
+    }
+
+    .about-wrapper p {
+        --max-lines: 5;
+        --line-height: 1.4;
+
+        max-height: calc(var(--max-lines) * 1em * var(--line-height));
+        line-height: var(--line-height);
+
+        overflow: hidden;
+        position: relative;
+    }
+
+    .about-wrapper p:has(+ .expand-btn:not(:checked))::before {
+        content: "";
+        position: absolute;
+        height: calc(1em * var(--line-height));
+        width: 100%;
+        bottom: 0;
+        pointer-events: none;
+        background: linear-gradient(to bottom, transparent, var(--body));
+
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-svg,
+    .contact-grid h2 {
+        justify-self: center;
+    }
+
+    .about-wrapper {
+        width: 70vw;
+    }
+
+
+
+    .book-grid {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    .book-gradient {
+        background: linear-gradient(180deg, rgb(236, 229, 241, 0.6) 0%, rgba(227, 211, 233, 1) 65%, rgba(227, 211, 235, 1) 100%);
+    }
+
+    .book-grid img {
+        grid-row: auto;
+    }
+
+    .book-grid button {
+        width: 50vw;
+    }
+
+    .book-grid a,
+    .book-text-container {
+        justify-self: center;
+    }
+
+    .activity-wrapper .activities-container {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-wrapper .activities-container p,
+    .activity-wrapper .activities-container h2,
+    .activity-wrapper .activities-container .expand-btn {
+        grid-column: auto;
+    }
+
+    .wrapper .carousel {
+        grid-auto-columns: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .page-container-wrapper {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+
+    }
+
+    nav {
+        display: none;
+    }
+
+    .topnav {
+        display: block;
+    }
+
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .wrapper {
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        box-shadow: none;
+    }
+
+    .wrapper i {
+        background-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(220%);
+    }
+    .wrapper i:active {
+        transform: translateY(220%) scale(0.85);
+    }
+    
+    .wrapper i svg {
+        fill: var(--main);
+    }
+
+    .wrapper i:first-child {
+        left: 10px;
+    }
+
+    .wrapper i:last-child {
+        right: 10px;
+    }
+
+
+    .wrapper-container {
+        overflow-y: hidden;
+        margin: 0px;
+        border-radius: 15px;
+        width: 90vw;
+        padding: 0px;
+        overflow-x: hidden;
+    }
+
+    .carousel .card {
+        min-width: 200px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card .img img {
+        padding-top: 10px;
+        height: 100px;
+        width: 100px;
+    }
+
+    .carousel .card .img {
+        height: 100px;
+        width: 100px;
+    }
+
+
+    .book-wrapper-container {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .book-promo {
+        padding: 5px;
+        padding-bottom: 30px;
+    }
+
+    .book-promo img {
+        width: 60vw;
+    }
+
+
+}
