@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mihalis Alexakos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="gradient"></div>
+        <div class="homepage_wrapper">
+            <div class="navbar">
+                <ul>
+                    <h2 class="name">Mihalis Alexakos</h2>
+                    <li><a href="art.html"><h2>Portfolio</h2></a></li>
+                    <li><a href="about.html"><h2>About / Contact</h2></a></li>
+                </ul>
+            </div>
+
+            <div class="filters">
+                <h2 class="filter-toggle">Filters:</h2> 
+                <div class="filter-container">
+                    <div class="selected filter" data-id="all">
+                        <p>All</p> <i class="fa-solid fa-th"></i>
+                    </div>
+                    <div class="filter" data-id="portrait">
+                        <p>Portraits</p> <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="filter" data-id="splashart">
+                        <p>Splasharts</p> <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <div class="filter" data-id="landscape">
+                        <p>Landscapes</p> <i class="fa-solid fa-mountain-sun"></i>
+                    </div>
+                    <div class="filter" data-id="cat">
+                        <p>Cats</p> <i class="fa-solid fa-cat"></i>
+                    </div>
+                    <div class="filter" data-id="animation">
+                        <p>Animations</p> <i class="fa-solid fa-film"></i>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="artwork-grid">
+                <div class="img-wrapper grid-span-2-row grid-span-3-col"  id="Ahri solos baron" data-id="splashart">
+                    <img src="art/ahri_solos_baron.jpg">
+                </div>
+                <div class="img-wrapper grid-span-2-col grid-span-2-row"  id="Lux" data-id="splashart">
+                    <img src="art/lux.jpg">
+                </div>
+                <div class="img-wrapper grid-span-2-row"  id="mlem"  data-id="cat">
+                    <img src="art/mlem.jpg">
+                </div>
+                <div class="img-wrapper grid-span-6-row"  id="Asuka"  data-id="splashart">
+                    <img src="art/Asuka.jpg">
+                </div>
+                <div class="img-wrapper grid-span-4-row grid-span-2-col"  id="Come on let's go!"  data-id="animation">
+                    <img src="greet.gif">
+                </div>
+                <div class="img-wrapper grid-span-2-row grid-span-2-col"  id="Strolling..." data-id="animation">
+                    <img src="walking_cycle.gif">
+                </div>
+                <div class="img-wrapper grid-span-3-col grid-span-3-row"  id="Katarina vs Drake"  data-id="splashart">
+                    <img src="art/katarina_vs_drake.jpg">
+                </div>
+                <div class="img-wrapper grid-span-4-row"  id="Katarina"  data-id="splashart">
+                    <img src="art/katarina.jpg">
+                </div>
+                <div class="img-wrapper grid-span-4-row"  id="KDA Ahri"  data-id="portrait">
+                    <img src="art/kda.jpg">
+                </div>
+                <div class="img-wrapper grid-span-4-row"  id="Papers"  data-id="splashart">
+                    <img src="art/papers.jpg">
+                </div>
+                <div class="img-wrapper grid-span-3-col grid-span-2-row"  id="Into the forest"  data-id="landscape">
+                    <img src="art/landscape1.JPG">
+                </div>
+                <div class="img-wrapper grid-span-4-row"  id="Portrait study"  data-id="portrait">
+                    <img src="art/portrait.jpg">
+                </div>
+                <div class="img-wrapper grid-span-4-row grid-span-2-col"  id="Does whatever a spider can"  data-id="splashart">
+                    <img src="art/spidermanakos.jpg">
+                </div>
+                <div class="img-wrapper grid-span-3-row " id="gimme gimme"   data-id="cat">
+                    <img src="art/pizzacat.JPG">
+                </div>
+                <div class="img-wrapper grid-span-2-row grid-span-2-col"  id="End of the world"  data-id="cat">
+                    <img src="art/spacecats.JPG">
+                </div>
+                <div class="img-wrapper grid-span-2-col"  id="Out of the forest"  data-id="landscape">
+                    <img src="art/landscape2.JPG">
+                </div>
+                <div class="img-wrapper grid-span-2-col"  id="Field"  data-id="landscape">
+                    <img src="art/landscape3.JPG">
+                </div>
+                <div class="img-wrapper"  id="Ceremony"  data-id="portrait">
+                    <img src="art/ceremony.JPG">
+                </div>
+                <div class="img-wrapper grid-span-2-row grid-span-2-col"  id="Mulan & Mushu"  data-id="cat">
+                    <img src="art/2cats.JPG">
+                </div>
+                <div class="img-wrapper grid-span-4-row"  id="Bat cat & kirby cat" data-id="cat">
+                    <img src="art/2catsvertical.JPG">
+                </div>
+                <div class="img-wrapper grid-span-2-col" id="book summoning" data-id="animation">
+                    <img src="book.gif">
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <span id="close-modal" class="close-btn"> <i class="fa-solid fa-xmark"></i> </span>
+            <div class="modal-container">
+                <img id="modal-image" class="modal-content" />
+                <p id="modal-text" class="modal-description"></p> 
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,442 @@
+
+
+:root{
+    --white: rgb(251, 251, 251);
+    --black: rgb(21, 21, 21);
+    --muted_white: rgb(182, 182, 182);
+    --accent: rgb(255, 229, 176);
+}
+
+
+body {
+    width: 100%;
+    height: auto;
+    display: grid;
+    background-image: url(bgflipped.jpg);
+    background-color: black;
+    background-size: contain;
+    background-repeat: repeat;
+    display: flex;
+    justify-content: center;
+}
+
+html {
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.homepage_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 75vw;
+    max-width: 1500px;
+}
+
+
+
+/* NAVBAR SETTINGS */
+/* settings of navbar by default */
+
+.navbar {
+    display: flex;
+    height: 150px;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    font-size: 1em;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    z-index: 4;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 5vw;
+}
+
+.navbar a {
+    transition: 0.3s ease;
+    color: var(--muted_white);
+    text-decoration: none;
+    font-weight: 800;
+
+}
+
+.name{
+    color: var(--muted_white);
+}
+
+
+/* HOVER */
+
+
+
+/* changes scale of navbar text when hovered over */
+.navbar li:hover {
+    transition: 0.3s ease;
+    transform: scale(1.1);
+}
+
+.navbar li:hover > a{
+    color: var(--white);
+}
+
+.navbar li:active{
+    transform: scale(1);
+    transition: 0s;
+}
+
+.gradient{
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background: linear-gradient(to bottom, black, transparent);
+    z-index: 3;
+}
+
+
+.filters {
+    font-size: 1em;
+    display: flex;
+    width: 100%;
+    position: sticky;
+    top: 0; /* This makes it stick to the top of the viewport when scrolled to */
+    z-index: 4; /* Ensure it's above other content */
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    flex-direction: row;
+    color: var(--muted_white);
+    padding: 10px; /* Optional padding for inside spacing */
+}
+
+.filter-container {
+    display: flex; /* Hide filters by default */
+    gap: 30px;
+    flex-direction: row;
+    color: var(--muted_white);
+    padding: 10px; /* Optional padding for inside spacing */
+    justify-content: start;
+    align-items: center;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.filter:hover{
+    color: var(--white);
+}
+
+.selected{
+    border: 2px solid white;
+    color: var(--black);
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+}
+
+
+
+
+
+.artwork-grid {
+
+    padding-top: 10px;
+    padding-bottom: 5vw;
+    gap: 0px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr); /* Always have 3 equal columns */
+    grid-auto-rows: auto;
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+}
+
+.grid-span-2-col {
+    grid-column: span 2;
+}
+.grid-span-3-col {
+    grid-column: span 3;
+}
+
+.grid-span-2-row {
+    grid-row: span 2;
+}
+.grid-span-3-row {
+    grid-row: span 3;
+}
+.grid-span-4-row {
+    grid-row: span 4;
+}
+.grid-span-5-row {
+    grid-row: span 5;
+}
+.grid-span-6-row {
+    grid-row: span 6;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    transition: 0.15s;
+    cursor: pointer;
+    
+}
+
+.img-wrapper>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.img-wrapper:hover>img {
+    transform: scale(102%);
+    transition: 0.5s;
+
+}
+
+
+
+.TL-br{
+    border-top-left-radius: 10px;
+}
+
+.TR-br{
+    border-top-right-radius: 10px;
+}
+
+.BL-br{
+    border-bottom-left-radius: 10px;
+}
+
+.BR-br{
+    border-bottom-right-radius: 10px;
+}
+
+
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Background color */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 70vw;
+    max-height: 70vh;
+    margin: auto;
+    display: block;
+    transform: scale(0.9); /* Start slightly smaller */
+    transition: transform 0.2s ;
+    animation: scaleUp 0.2s ; /* Apply scale animation */
+}
+
+.modal-description{
+    color: white;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+
+/* Close button styling */
+.close-btn {
+    z-index: 11;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--muted_white);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+/* Animation for scaling up */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9); /* Start slightly smaller */
+    }
+    to {
+        transform: scale(1); /* Scale up to full size */
+    }
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal.hide {
+    display: none;
+}
+.details-container{
+    transition: 0.2s;
+    color: var(--muted_white);
+}
+
+.about-section{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.about-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 10px;
+    padding-bottom: 100px;
+}
+
+.details-container:hover{
+    color: var(--white);
+    transform: scale(101%);
+}
+
+.details-container a{
+    text-decoration: underline;
+    color: var(--muted_white);
+}
+
+.details-container a:hover{
+    color: var(--accent);
+}
+
+.image-section img{
+    width: 20vw;
+    max-width: 500px;
+    transform: rotate(3deg);
+}
+.image-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.image-section:active{
+    transform: rotate(3deg);
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .homepage_wrapper{
+        width: 85vw;
+    }
+
+    .filters{
+        flex-direction: column;
+        align-items: start;
+        font-size: 25px;
+        position: initial;
+    }
+
+    .filter{
+        padding: 25px;
+        border-radius: 25px;
+    }
+
+    .filter-container {
+        display: none; /* Hide filters by default */
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .filter-container.show {
+        display: flex; /* Show filters when the 'show' class is added */
+        gap: 30px;
+    }
+
+    .filter-toggle {
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .filter-toggle:hover {
+       color: var(--white);
+    }
+
+
+    .selected{
+        border: 3px solid white;
+        color: var(--black);
+        border-radius: 25px;
+        color: white;
+    }
+
+    .navbar{
+        margin-top: 100px;
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+
+    .details-container{
+        font-size: 25px;
+    }
+
+    .about-container{
+        gap: 100px;
+    }
+
+    .image-section{
+        display: none;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+
+    }
+
+    .name{
+        display: none;
+    }
+}
